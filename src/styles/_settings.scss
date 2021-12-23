@@ -1,0 +1,298 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  background: linear-gradient(
+    -45deg,
+    rgba(33, 0, 57, 1) 0%,
+    rgba(37, 6, 89, 1) 50%,
+    rgba(83, 11, 99, 1) 75%,
+    rgba(140, 2, 2, 1) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+header {
+  background: rgb(33, 0, 57);
+  background: linear-gradient(
+    180deg,
+    rgba(33, 0, 57, 1) 0%,
+    rgba(119, 2, 140, 0) 100%
+  );
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.active-btn {
+  background-color: purple;
+  padding: 0px 10px 0px 10px;
+  border-radius: 10px;
+}
+
+.logo-groupomania {
+  width: 300px;
+}
+
+.home {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li,
+label {
+  color: white;
+}
+
+.box-signin-signup {
+  margin-top: 40px;
+  display: flex;
+}
+
+#register,
+#login {
+  cursor: pointer;
+  margin: 20px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn-login,
+.btn-posts {
+  background-color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  padding: 0px 10px 0px 10px;
+  color: purple;
+  font-weight: bold;
+}
+
+h1,
+h2,
+.description-posts {
+  color: purple;
+}
+
+p {
+  color: white;
+}
+
+.all-posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-box {
+  min-width: 370px;
+  padding: 60px 40px 40px 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 40px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.card-box:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  fill: orange;
+}
+
+.icon-posts {
+  fill: purple;
+  cursor: pointer;
+  margin-left: 10px;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.icon-posts.edit,
+.icon-posts.close {
+  right: 50px;
+}
+
+.icon-posts:hover {
+  height: 25px;
+  width: 25px;
+  border-radius: 20px;
+  background-color: rgba(128, 0, 128, 0.2);
+}
+
+.box-icon-posts {
+  display: flex;
+  justify-content: flex-end;
+}
+
+a {
+  text-decoration: none;
+}
+
+.remarks-box {
+  padding: 10px 10px 10px 20px;
+  border: 1px solid purple;
+  background: rgb(33, 0, 57);
+  background: linear-gradient(
+    45deg,
+    rgba(37, 6, 89, 1) 50%,
+    rgba(83, 11, 99, 1) 75%
+  );
+  opacity: 0.8;
+  margin: 20px;
+  border-radius: 20px 20px 0px 20px;
+}
+
+.remarks-box:hover {
+  opacity: 1;
+}
+
+.icon-remarks {
+  fill: white;
+}
+
+.box-err {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.txt-err {
+  color: white;
+}
+
+.img-fond {
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.log-container,
+.posts-card,
+header,
+form {
+  position: relative;
+  z-index: 2;
+}
+
+.posts-card {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.error {
+  color: red;
+}
+
+#posts-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#title,
+#description {
+  border-radius: 10px;
+  border: none;
+  opacity: 0.5;
+  width: 300px;
+}
+
+#title:hover,
+#description:hover {
+  opacity: 1;
+}
+
+#commentaire {
+  border-radius: 10px;
+  border: none;
+  opacity: 0.5;
+  width: 100%;
+}
+
+#commentaire:hover {
+  opacity: 1;
+}
+
+.btn-remark {
+  background-color: purple;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  padding: 0px 10px 0px 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.color-purple {
+  color: purple;
+}
+
+.box-icon-remarks {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-remarks {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.icon-remarks:hover {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.none {
+  display: none;
+}
