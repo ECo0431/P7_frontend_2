@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Remarks from "../pages/Remarks";
-import PostsARemark from "./PostsARemark";
-import EditPosts from "./EditPosts";
-import DeletePosts from "./DeletePosts";
+import Remarks from "./Remarks";
+import PostsARemark from "../components/PostsARemark";
+import EditPosts from "../components/EditPosts";
+import DeletePosts from "../components/DeletePosts";
 // const formEditPost = document.querySelector(".posts-form-edit");
 // const iconPostsEdit = document.querySelector(".edit");
 // const iconPostsClose = document.querySelector(".close");
@@ -45,7 +45,6 @@ const Posts = (props) => {
           <path d="M0 0h24v24H0V0z" fill="none" />
           <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
         </svg>
-        <div id="edit"></div>
         <svg
           onClick={editMenu}
           className="icon-posts edit"
@@ -72,7 +71,7 @@ const Posts = (props) => {
         </svg>
         <DeletePosts idPosts={posts.id_posts} />
       </div>
-      <EditPosts idPosts={posts.id_posts} />
+      <EditPosts idPosts={posts.id_posts} descPosts={posts.description} />
       <h2>{posts.title}</h2>
       <p className="description-posts">{posts.description}</p>
       <img src={posts.img} alt={posts.title}></img>

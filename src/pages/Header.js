@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const Header = () => {
+const Header = (props) => {
+  const paramUser = () => {
+    window.location = "/paramusers";
+  };
+  const home = () => {
+    window.location = "/homeposts";
+  };
+
   return (
     <header>
       <a href="/homeposts">
         <img
+          onClick={home}
           className="logo-groupomania"
           src="./img/icon-left-font-monochrome-white.png"
           alt="logo-groupomania"
@@ -13,6 +21,7 @@ const Header = () => {
       </a>
       <div className="icon-box">
         <svg
+          onClick={paramUser}
           className="icon"
           xmlns="http://www.w3.org/2000/svg"
           enable-background="new 0 0 24 24"

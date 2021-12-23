@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Posts from "./Posts";
 
 const EditPosts = (props) => {
-  const { remarks, idPosts } = props;
+  const { descriptionPosts, descPosts } = props;
+  const { id, idPosts } = props;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 

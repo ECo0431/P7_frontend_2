@@ -296,3 +296,46 @@ form {
 .none {
   display: none;
 }
+
+.remarks-form-edit form {
+  display: flex;
+  flex-direction: column;
+}
+
+#remark {
+  min-width: 300px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.edit-remark-label {
+  margin-bottom: -20px;
+}
+
+.btn-edit-remark {
+  border-radius: 0px 0px 10px 10px;
+}
+
+.param-users {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  background-color: red;
+  border: 0px solid white;
+  border-radius: 20px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+p {
+  text-align: center;
+}
+
+.icon-delete-users {
+  height: 150px;
+  width: 150px;
+  fill: white;
+}

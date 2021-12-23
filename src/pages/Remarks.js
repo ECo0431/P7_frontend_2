@@ -2,6 +2,25 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import HomePosts from "./HomePosts";
 import DeleteRemarks from "../components/DeleteRemarks";
+import EditRemarks from "../components/EditRemarks";
+
+const editMenuRemarks = () => {
+  const formEditRemark = document.querySelector(".remarks-form-edit");
+  const iconRemarksEdit = document.querySelector(".edit-remarks");
+  const iconRemarksClose = document.querySelector(".close-remarks");
+  formEditRemark.classList.remove("none");
+  iconRemarksClose.classList.remove("none");
+  iconRemarksEdit.classList.add("none");
+};
+
+const closeMenuRemarks = () => {
+  const formEditRemark = document.querySelector(".remarks-form-edit");
+  const iconRemarksEdit = document.querySelector(".edit-remarks");
+  const iconRemarksClose = document.querySelector(".close-remarks");
+  formEditRemark.classList.add("none");
+  iconRemarksClose.classList.add("none");
+  iconRemarksEdit.classList.remove("none");
+};
 
 const Remarks = (props) => {
   const { remarks, idPosts } = props;
@@ -17,7 +36,20 @@ const Remarks = (props) => {
         <div className="remarks-box" key={`${remarks.id_remarks}-${index}`}>
           <div className="box-icon-remarks">
             <svg
-              className="icon-remarks edit"
+              onClick={closeMenuRemarks}
+              className="icon-remarks close-remarks none"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 0 24 24"
+              width="24px"
+              fill="#000000"
+            >
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+            </svg>
+            <svg
+              onClick={editMenuRemarks}
+              className="icon-remarks edit-remarks"
               xmlns="http://www.w3.org/2000/svg"
               enable-background="new 0 0 24 24"
               height="24px"
@@ -41,6 +73,7 @@ const Remarks = (props) => {
             </svg>
             <DeleteRemarks idPosts={idPosts} idRemarks={remarks.id_remarks} />
           </div>
+          <EditRemarks idPosts={idPosts} idRemarks={remarks.id_remarks} />
           <p>{remarks.remark}</p>
         </div>
       ))}

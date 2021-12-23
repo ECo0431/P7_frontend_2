@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Posts from "../components/Posts";
+import Posts from "./Posts";
 import Header from "./Header";
 import PostAPosts from "../components/PostAPosts";
 
