@@ -5,24 +5,6 @@ import EditPosts from "../components/EditPosts";
 import DeletePosts from "../components/DeletePosts";
 import axios from "axios";
 
-// const editMenu = () => {
-//   const formEditPost = document.querySelector(".posts-form-edit");
-//   const iconPostsEdit = document.querySelector(".edit");
-//   const iconPostsClose = document.querySelector(".close");
-//   formEditPost.classList.remove("none");
-//   iconPostsClose.classList.remove("none");
-//   iconPostsEdit.classList.add("none");
-// };
-
-// const closeMenu = () => {
-//   const formEditPost = document.querySelector(".posts-form-edit");
-//   const iconPostsEdit = document.querySelector(".edit");
-//   const iconPostsClose = document.querySelector(".close");
-//   formEditPost.classList.add("none");
-//   iconPostsClose.classList.add("none");
-//   iconPostsEdit.classList.remove("none");
-// };
-
 const Posts = (props) => {
   const { posts } = props;
   const [data, setData] = useState([]);

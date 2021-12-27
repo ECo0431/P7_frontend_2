@@ -17,7 +17,7 @@ const EditRemarks = (props) => {
     });
   };
   return (
-    <div className="remarks-form-edit none">
+    <div className="remarks-form-edit">
       <form action="" onSubmit={putRemark}>
         <label className="edit-remark-label" htmlFor="remark">
           Commentaire
