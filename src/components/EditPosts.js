@@ -6,6 +6,7 @@ const EditPosts = (props) => {
   const { id, idPosts } = props;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  let i = 0;
 
   const putPost = (e) => {
     // e.preventDefault();
@@ -19,43 +20,47 @@ const EditPosts = (props) => {
       },
     });
   };
+
   return (
-    <div className="posts-form-edit none">
-      <form action="" onSubmit={putPost}>
-        <div className="box-posts box-posts-title">
-          <label className="color-purple" htmlFor="title">
-            Titre
-          </label>
+    <div>
+      <div className="posts-form-edit">
+        <form action="" onSubmit={putPost}>
+          <div className="box-posts box-posts-title">
+            <label className="color-purple" htmlFor="title">
+              Titre
+            </label>
+            <br />
+            <input
+              type="text"
+              name="title"
+              id="title"
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+            />
+          </div>
           <br />
-          <input
-            type="text"
-            name="title"
-            id="title"
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
-          />
-        </div>
-        <br />
-        <div className="box-posts box-posts-description">
-          <label className="color-purple" htmlFor="description">
-            Description
-          </label>
+          <div className="box-posts box-posts-description">
+            <label className="color-purple" htmlFor="description">
+              Description
+            </label>
+            <br />
+            <textarea
+              type="text"
+              name="description"
+              id="description"
+              onChange={(e) => setDescription(e.target.value)}
+              value={description}
+            />
+          </div>
           <br />
-          <textarea
-            type="text"
-            name="description"
-            id="description"
-            onChange={(e) => setDescription(e.target.value)}
-            value={description}
-          />
-        </div>
-        <br />
-        <div className="box-posts box-posts-btn">
-          <input className="btn-posts" type="submit" value="Modifier" />
-        </div>
-      </form>
+          <div className="box-posts box-posts-btn">
+            <input className="btn-posts" type="submit" value="Modifier" />
+          </div>
+        </form>
+      </div>
     </div>
   );
+  i++;
 };
 
 export default EditPosts;

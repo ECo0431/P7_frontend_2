@@ -58,7 +58,7 @@ const PostAPosts = () => {
         type="file"
         id="avatar"
         name="avatar"
-        accept="image/png, image/jpeg"
+        accept="images/png, images/jpeg"
         onChange={(e) => setImg(e.target.value)}
       ></input>
       <div className="box-posts box-posts-btn">
