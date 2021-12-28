@@ -26,7 +26,7 @@ const SignUpForm = () => {
           emailErrror.innerHTML = "email inconnu";
           passwordError.innerHTML = "mot de passe invalide";
         } else {
-          window.location = "/homeposts";
+          window.location = "/";
         }
       })
       .catch((err) => {
