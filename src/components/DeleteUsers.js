@@ -37,7 +37,9 @@ const DeleteUsers = () => {
           ATTENTION !<br />
           SUPPRESSION DÉFÉNITIVE DU COMPTE
         </p>
-        <button onClick={deleteUser}>Suppresion du compte</button>
+        <button className="btn-delete" onClick={deleteUser}>
+          Suppresion du compte
+        </button>
       </div>
     </div>
   );

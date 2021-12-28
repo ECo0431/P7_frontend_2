@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Remarks from "./Remarks";
+import Remarks from "./Remark";
 import PostsARemark from "../components/PostsARemark";
 import EditPosts from "../components/EditPosts";
 import DeletePosts from "../components/DeletePosts";
@@ -8,6 +8,7 @@ import axios from "axios";
 const Posts = (props) => {
   const { posts } = props;
   const [data, setData] = useState([]);
+  const [remarks, setRemarks] = useState([]);
   const [editMenu, setEditMenu] = useState(false);
   const [iconCloseMenu, setIconCloseMenu] = useState(false);
   const [iconEditMenu2, setIconEditMenu2] = useState(true);
@@ -16,6 +17,12 @@ const Posts = (props) => {
     axios
       .get("http://localhost:3000/api/posts")
       .then((res) => setData(res.data));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/api/posts/${posts.id_posts}/remarks`)
+      .then((res) => setRemarks(res.data));
   }, []);
 
   const fonctionEditMenu = (e) => {
@@ -92,7 +99,9 @@ const Posts = (props) => {
       <h2>{posts.title}</h2>
       <p className="description-posts">{posts.description}</p>
       <img src={posts.img} alt={posts.title}></img>
-      <Remarks idPosts={posts.id_posts} />
+      {remarks.map((remark) => {
+        return <Remarks data={remark} idPosts={posts.id_posts} />;
+      })}
       <PostsARemark idPosts={posts.id_posts} />
     </div>
   );
