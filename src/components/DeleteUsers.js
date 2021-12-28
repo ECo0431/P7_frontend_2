@@ -1,14 +1,19 @@
 import React from "react";
 import axios from "axios";
 const DeleteUsers = () => {
+  let idUserLocalS = [];
+  idUserLocalS = JSON.parse(localStorage.getItem("id_users"));
   const deleteUser = (e) => {
-    // e.preventDefault();
+    let idUserLocalS = [];
+    idUserLocalS = JSON.parse(localStorage.getItem("id_users"));
     axios({
       method: "delete",
-      url: ` http://localhost:3000/api/users/15`,
+      url: ` http://localhost:3000/api/users/${idUserLocalS}`,
       withCredentials: true,
     });
-    window.location.reload();
+    // window.location.reload();
+    window.location = "/";
+    localStorage.clear();
   };
   return (
     <div>

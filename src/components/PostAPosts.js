@@ -5,11 +5,13 @@ const PostAPosts = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
+  let idUserLocalS = [];
+  idUserLocalS = JSON.parse(localStorage.getItem("id_users"));
 
   const postAPost = (e) => {
     axios({
       method: "post",
-      url: "http://localhost:3000/api/users/1/posts",
+      url: `http://localhost:3000/api/users/${idUserLocalS}/posts`,
       withCredentials: true,
       data: {
         title: title,

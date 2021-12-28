@@ -3,16 +3,17 @@ import axios from "axios";
 
 const EditPosts = (props) => {
   const { descriptionPosts, descPosts } = props;
-  const { id, idPosts } = props;
+  const { idP, idPosts } = props;
+  const { idU, idUsers } = props;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  let i = 0;
+  let idUserLocalS = [];
+  idUserLocalS = JSON.parse(localStorage.getItem("id_users"));
 
   const putPost = (e) => {
-    // e.preventDefault();
     axios({
       method: "put",
-      url: `http://localhost:3000/api/users/1/posts/${idPosts}`,
+      url: `http://localhost:3000/api/users/${idUserLocalS}/posts/${idPosts}`,
       withCredentials: true,
       data: {
         title: title,
@@ -60,7 +61,6 @@ const EditPosts = (props) => {
       </div>
     </div>
   );
-  i++;
 };
 
 export default EditPosts;

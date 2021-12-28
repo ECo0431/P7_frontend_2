@@ -24,6 +24,8 @@ const SignInForm = () => {
           console.log("errors");
         } else {
           window.location = "/homeposts";
+          localStorage.setItem("id_users", res.data.userId);
+          localStorage.setItem("token", res.data.token);
         }
       })
       .catch((err) => {

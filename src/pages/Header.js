@@ -9,6 +9,11 @@ const Header = (props) => {
     window.location = "/homeposts";
   };
 
+  const logout = () => {
+    window.location = "/";
+    localStorage.clear();
+  };
+
   return (
     <header>
       <a href="/homeposts">
@@ -42,6 +47,7 @@ const Header = (props) => {
           </g>
         </svg>
         <svg
+          onClick={logout}
           className="icon"
           xmlns="http://www.w3.org/2000/svg"
           enable-background="new 0 0 24 24"

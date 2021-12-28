@@ -4,13 +4,15 @@ import axios from "axios";
 const PostsARemark = (props) => {
   const { remarks, idPosts } = props;
   const [remark, setRemark] = useState("");
+  let idUserLocalS = [];
+  idUserLocalS = JSON.parse(localStorage.getItem("id_users"));
 
   const handleLogin = (e) => {
     e.preventDefault();
 
     axios({
       method: "post",
-      url: `http://localhost:3000/api/users/1/posts/${idPosts}/remarks`,
+      url: `http://localhost:3000/api/users/${idUserLocalS}/posts/${idPosts}/remarks`,
       withCredentials: true,
       data: {
         remark: remark,
