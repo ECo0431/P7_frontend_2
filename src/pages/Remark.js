@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import HomePosts from "./HomePosts";
+import React, { useState } from "react";
 import DeleteRemarks from "../components/DeleteRemarks";
 import EditRemarks from "../components/EditRemarks";
 
 const Remarks = (props) => {
-  const { remarks, idPosts, data } = props;
+  const { idPosts, data } = props;
   const [editMenu, setEditMenu] = useState(false);
   let idUserLocalS = [];
   idUserLocalS = JSON.parse(localStorage.getItem("id_users"));
@@ -15,11 +13,10 @@ const Remarks = (props) => {
       return !value;
     });
   }
-  console.log(data.id_users);
   return (
     <div>
       <div className="remarks-box">
-        {idUserLocalS == data.id_users || idUserLocalS == "1" ? (
+        {idUserLocalS === data.id_users || idUserLocalS === "1" ? (
           <div className="box-icon-remarks">
             <button onClick={toggleEdit}>
               {editMenu && (

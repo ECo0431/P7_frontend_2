@@ -1,1 +1,2 @@
-Exécuter nom start comme commande dans le terminal frontend# P7_frontend_2
+- Exécuter npm start comme commande dans le terminal frontend# P7_frontend_2
+- Le premier compte crée sera le compte admin

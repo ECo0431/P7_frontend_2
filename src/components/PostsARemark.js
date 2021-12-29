@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const PostsARemark = (props) => {
-  const { remarks, idPosts } = props;
+  const { idPosts } = props;
   const [remark, setRemark] = useState("");
   let idUserLocalS = [];
   idUserLocalS = JSON.parse(localStorage.getItem("id_users"));

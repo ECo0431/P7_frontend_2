@@ -4,7 +4,6 @@ const DeleteUsers = () => {
   let idUserLocalS = [];
   idUserLocalS = JSON.parse(localStorage.getItem("id_users"));
   const deleteUser = (e) => {
-    let idUserLocalS = [];
     idUserLocalS = JSON.parse(localStorage.getItem("id_users"));
     axios({
       method: "delete",

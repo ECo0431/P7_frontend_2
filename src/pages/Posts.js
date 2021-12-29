@@ -28,7 +28,7 @@ const Posts = (props) => {
   }, []);
 
   const fonctionEditMenu = (e) => {
-    if (e.target.id == "iconEditMenu") {
+    if (e.target.id === "iconEditMenu") {
       setEditMenu(true);
       setIconCloseMenu(true);
       setIconEditMenu2(false);
@@ -36,7 +36,7 @@ const Posts = (props) => {
   };
 
   const fonctionCloseMenu = (e) => {
-    if (e.target.id == "iconCloseMenu") {
+    if (e.target.id === "iconCloseMenu") {
       setEditMenu(false);
       setIconCloseMenu(false);
       setIconEditMenu2(true);
@@ -45,7 +45,7 @@ const Posts = (props) => {
 
   return (
     <div className="card-box">
-      {idUserLocalS == posts.id_users || idUserLocalS == "1" ? (
+      {idUserLocalS === posts.id_users || idUserLocalS === "1" ? (
         <div className="box-icon-posts">
           {iconCloseMenu && (
             <svg
@@ -105,7 +105,7 @@ const Posts = (props) => {
       )}
       <h2>{posts.title}</h2>
       <p className="description-posts">{posts.description}</p>
-      <img src={posts.img} alt={posts.title}></img>
+      <img className="img-posts" src={posts.img} alt={posts.title}></img>
       {remarks.map((remark) => {
         return <Remarks data={remark} idPosts={posts.id_posts} />;
       })}

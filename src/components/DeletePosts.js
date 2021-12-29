@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 
 const DeletePosts = (props) => {
-  const { remarks, idPosts } = props;
+  const { idPosts } = props;
 
   const deletePost = (e) => {
     // e.preventDefault();

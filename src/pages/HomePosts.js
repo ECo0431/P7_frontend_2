@@ -22,7 +22,11 @@ const HomePosts = () => {
           <Posts posts={posts} key={posts.id_posts} />
         ))}
       </div>
-      <img className="img-fond" src="./img/fond.png"></img>
+      <img
+        alt="Entreprise groupomania"
+        className="img-fond"
+        src="./img/fond.png"
+      ></img>
     </div>
   );
 };

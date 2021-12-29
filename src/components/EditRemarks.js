@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const EditRemarks = (props) => {
-  const { id_posts, idPosts } = props;
-  const { id_remarks, idRemarks } = props;
+  const { idPosts } = props;
+  const { idRemarks } = props;
   const [remark, setRemark] = useState("");
   const putRemark = (e) => {
     // e.preventDefault();

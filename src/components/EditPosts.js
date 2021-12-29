@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const EditPosts = (props) => {
-  const { descriptionPosts, descPosts } = props;
-  const { idP, idPosts } = props;
-  const { idU, idUsers } = props;
+const EditPosts = (props, e) => {
+  const { idPosts } = props;
+  const [img, setImg] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   let idUserLocalS = [];
   idUserLocalS = JSON.parse(localStorage.getItem("id_users"));
 
   const putPost = (e) => {
+    // e.preventDefault();
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("image", img);
     axios({
       method: "put",
       url: `http://localhost:3000/api/users/${idUserLocalS}/posts/${idPosts}`,
       withCredentials: true,
-      data: {
-        title: title,
-        description: description,
-      },
+      data: formData,
     });
   };
 
@@ -53,6 +54,16 @@ const EditPosts = (props) => {
               value={description}
             />
           </div>
+          <br />
+          <input
+            className="btn-img-edit-post"
+            type="file"
+            id="avatar"
+            name="avatar"
+            accept="images/png, images/jpeg"
+            onChange={(e) => setImg(e.target.files[0])}
+          />
+          <br />
           <br />
           <div className="box-posts box-posts-btn">
             <input className="btn-posts" type="submit" value="Modifier" />

@@ -7,8 +7,10 @@ const PostAPosts = (e) => {
   const [img, setImg] = useState("");
   let idUserLocalS = [];
   idUserLocalS = JSON.parse(localStorage.getItem("id_users"));
-
+  // let tokenLocalS = [];
+  // tokenLocalS = JSON.parse(localStorage.getItem("token"));
   const postAPost = (e) => {
+    e.preventDefault();
     const formData = new FormData();
     formData.append("title", title);
     formData.append("description", description);
@@ -18,6 +20,9 @@ const PostAPosts = (e) => {
       url: `http://localhost:3000/api/users/${idUserLocalS}/posts`,
       withCredentials: true,
       data: formData,
+      // headers: {
+      //   Authorization: "Bearer " + JSON.parse(tokenLocalS),
+      // },
     })
       .then((res) => {
         if (res.data.error) {
@@ -32,7 +37,7 @@ const PostAPosts = (e) => {
   };
 
   return (
-    <form action="" onSubmit={postAPost} id="posts-form">
+    <form action="" onSubmit={(e) => postAPost(e)} id="posts-form">
       <div className="box-posts box-posts-title">
         <label htmlFor="title">Titre</label>
         <br />
@@ -58,12 +63,14 @@ const PostAPosts = (e) => {
       </div>
       <br />
       <input
+        className="btn-img-post"
         type="file"
         id="avatar"
         name="avatar"
         accept="images/png, images/jpeg"
         onChange={(e) => setImg(e.target.files[0])}
       ></input>
+      <br />
       <div className="box-posts box-posts-btn">
         <input className="btn-posts" type="submit" value="Publier" />
       </div>
