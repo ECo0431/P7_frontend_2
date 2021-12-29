@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+require("dotenv").config({ path: "../../.env" });
 
 const EditPosts = (props, e) => {
   const { idPosts } = props;
@@ -17,7 +18,7 @@ const EditPosts = (props, e) => {
     formData.append("image", img);
     axios({
       method: "put",
-      url: `http://localhost:3000/api/users/${idUserLocalS}/posts/${idPosts}`,
+      url: `http://localhost:${process.env.REACT_APP_API_URL}/api/users/${idUserLocalS}/posts/${idPosts}`,
       withCredentials: true,
       data: formData,
     });

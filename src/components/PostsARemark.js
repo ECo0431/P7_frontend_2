@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+require("dotenv").config({ path: "../../.env" });
 
 const PostsARemark = (props) => {
   const { idPosts } = props;
@@ -12,7 +13,7 @@ const PostsARemark = (props) => {
 
     axios({
       method: "post",
-      url: `http://localhost:3000/api/users/${idUserLocalS}/posts/${idPosts}/remarks`,
+      url: `http://localhost:${process.env.REACT_APP_API_URL}/api/users/${idUserLocalS}/posts/${idPosts}/remarks`,
       withCredentials: true,
       data: {
         remark: remark,

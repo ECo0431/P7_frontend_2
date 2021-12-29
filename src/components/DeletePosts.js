@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+require("dotenv").config({ path: "../../.env" });
 
 const DeletePosts = (props) => {
   const { idPosts } = props;
@@ -8,10 +9,11 @@ const DeletePosts = (props) => {
     // e.preventDefault();
     axios({
       method: "delete",
-      url: `http://localhost:3000/api/users/1/posts/${idPosts}`,
+      url: `http://localhost:${process.env.REACT_APP_API_URL}/api/users/1/posts/${idPosts}`,
       withCredentials: true,
     });
     window.location.reload();
+    console.log(process.env.REACT_APP_API_URL);
   };
 
   return (

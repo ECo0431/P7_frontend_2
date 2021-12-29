@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+require("dotenv").config({ path: "../../.env" });
+
 const DeleteUsers = () => {
   let idUserLocalS = [];
   idUserLocalS = JSON.parse(localStorage.getItem("id_users"));
@@ -7,7 +9,7 @@ const DeleteUsers = () => {
     idUserLocalS = JSON.parse(localStorage.getItem("id_users"));
     axios({
       method: "delete",
-      url: ` http://localhost:3000/api/users/${idUserLocalS}`,
+      url: ` http://localhost:${process.env.REACT_APP_API_URL}/api/users/${idUserLocalS}`,
       withCredentials: true,
     });
     // window.location.reload();
