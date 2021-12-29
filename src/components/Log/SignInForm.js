@@ -20,6 +20,8 @@ const SignInForm = () => {
       },
     })
       .then((res) => {
+        // axios.defaults.headers.common.Authorization =
+        //   "Bearer " + res.data.token;
         if (res.data.error) {
           console.log("errors");
         } else {
