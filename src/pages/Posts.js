@@ -45,7 +45,7 @@ const Posts = (props) => {
 
   return (
     <div className="card-box">
-      {idUserLocalS === posts.id_users || idUserLocalS === "1" ? (
+      {idUserLocalS === posts.id_users || idUserLocalS === 1 ? (
         <div className="box-icon-posts">
           {iconCloseMenu && (
             <svg

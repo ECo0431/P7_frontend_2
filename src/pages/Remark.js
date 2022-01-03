@@ -16,7 +16,7 @@ const Remarks = (props) => {
   return (
     <div>
       <div className="remarks-box">
-        {idUserLocalS === data.id_users || idUserLocalS === "1" ? (
+        {idUserLocalS === data.id_users || idUserLocalS === 1 ? (
           <div className="box-icon-remarks">
             <button onClick={toggleEdit}>
               {editMenu && (
